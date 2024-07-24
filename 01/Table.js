@@ -5,8 +5,21 @@ class Table extends React.Component {
         const {data} = this.props;
         console.log(data);
 
-        return <table key={data.id}>{ data.id }</table>
+        const table = data.map(n => <TableHeader key={n} id={n.id} name={n.name} price={n.price} quantity={n.quantity} />)
+
+        return <table>{ table }</table>
     }
+}
+
+const TableHeader = props => {
+    return  (
+            <table>
+                <th>{props.id}</th>
+                <th>{props.name}</th>
+                <th>{props.price}</th>
+                <th>{props.quantity}</th>
+            </table>
+    )
 }
 
 export default Table;
