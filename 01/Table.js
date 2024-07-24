@@ -5,7 +5,7 @@ class Table extends React.Component {
         const {data} = this.props;
         console.log(data);
 
-        return <table></table>
+        return <table key={data.id}>{ data.id }</table>
     }
 }
 
