@@ -9,7 +9,7 @@ import List from './List';
 function App()  {
     return (
     <>
-        <List item={ ['Katarzyna', 'Jan'] } />
+        <List items={['Jan', 'Anna']} />
         <Table data={ data }/>
     </>
     )
