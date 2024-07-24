@@ -8,10 +8,10 @@ import List from './List';
 
 function App()  {
     return (
-    <>
-        <List items={['Jan', 'Anna']} />
-        <Table data={ data }/>
-    </>
+        <>
+            <List items={['Jan', 'Anna']} />
+            <Table data={ data }/>
+        </>
     )
 }
 
