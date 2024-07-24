@@ -4,8 +4,15 @@ import { createRoot } from 'react-dom/client';
 import Table from './Table';
 import data from './data.json';
 
+import List from './List';
+
 function App()  {
-    return <Table data={ data }/>
+    return (
+    <>
+        <List item={ ['Jan', 'Katarzyna'] } />
+        <Table data={ data }/>
+    </>
+    )
 }
 
 const root = createRoot(document.querySelector('#root'));
