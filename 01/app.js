@@ -6,10 +6,12 @@ import data from './data.json';
 
 import List from './List';
 
+const toDoList = ['pakowanie rzeczy do przeprowadzki', 'zrobienie obiadu', 'nauka react', 'bieg']
+
 function App()  {
     return (
         <>
-            <List items={['Jan', 'Anna']} />
+            <List items={toDoList} />
             <Table data={ data }/>
         </>
     )
