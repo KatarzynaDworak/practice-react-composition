@@ -29,7 +29,6 @@ class Table extends React.Component {
             <table style={tableStyle}>
                 <TableHeader style={headerStyle} />
                 <TableBody data={data} cellStyle={cellStyle} rowStyle={rowStyle} rowHoverStyle={rowHoverStyle} />
-                <TableFooter />
             </table>
         );
     }
@@ -68,10 +67,6 @@ const TableBody = ({ data, cellStyle, rowStyle, rowHoverStyle }) => {
             ))}
         </tbody>
     );
-}
-
-const TableFooter = () => {
-    return <tfoot></tfoot>;
 }
 
 export default Table;
