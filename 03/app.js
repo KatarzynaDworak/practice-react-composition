@@ -11,10 +11,18 @@ class App extends React.Component {
         cart: [],
     }
     
+    addProductToCart = (product) => {
+        this.setState((prevState) => (
+            {
+               cart: [...prevState.cart, product]
+            }
+        ))
+    }
+
     render() {
         return (
             <section>
-                <Category />
+                <Category addProductToCart={this.addProductToCart}/>
                 <Cart />
             </section>
         )
