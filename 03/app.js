@@ -22,11 +22,12 @@ class App extends React.Component {
     render() {
         return (
             <section>
-                <Category addProductToCart={this.addProductToCart}/>
+                <Category items={data} addProductToCart={this.addProductToCart}/>
                 <Cart />
             </section>
         )
     }
+
 }
 
 const root = createRoot(document.querySelector('#root'));

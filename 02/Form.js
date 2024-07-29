@@ -27,6 +27,7 @@ class Form extends React.Component {
 
     render() {
         const { name, surname } = this.state;
+        
         const formStyle = {
             display: 'flex',
             flexDirection: 'column',
