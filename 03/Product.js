@@ -1,7 +1,7 @@
 import React from "react";
 
 const Product = (props) => {
-    const { data, clickHandler } = props;
+    const { data, isCart, clickHandler } = props;
     
     function handleClick(id) {
         console.log(id);
@@ -13,7 +13,15 @@ const Product = (props) => {
 
     return (
             <section>
-                <li key={data.id}>{data.name} ({data.price})<button onClick={() => handleClick(data.id)}>BUY</button> </li>
+                <li>
+                    {data.name} ({data.price})
+                    <button 
+                        disabled={isCart} 
+                        onClick={() => handleClick(data.id)}
+                    >
+                        BUY
+                    </button> 
+                </li>
             </section>
     )
 }

@@ -24,12 +24,20 @@ class App extends React.Component {
         }
     }
 
+    isCart = (id) => {
+        const { cart } =  this.state;
+        return !!this.state.cart.find(item => item.id === id)
+    }
+
     render() {
         const { cart } = this.state;
 
         return (
             <section>
-                <Category items={data} clickHandler={this.addProduct}/>
+                <Category 
+                    isCart={this.isCart} 
+                    items={data} 
+                    clickHandler={this.addProduct}/>
                 <Cart cart={cart}/>
             </section>
         )
