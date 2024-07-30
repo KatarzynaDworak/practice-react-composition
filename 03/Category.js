@@ -1,27 +1,18 @@
 import React from 'react';
+import Product from './Product';
 
 function Category(props) {
 
     const { items } = props;
-    const list = items.map((n, index) => n);
 
     return (
-            <>
+            <section>
                 <h2>Category</h2>
-                <ul key={index}>{<Item item={n}/>}</ul>
+                <ul>
+                    {items.map(item => <Product key={item.id} data={item} />)}
+                </ul>
 
-            </>
-    )
-}
-
-const Item = (props) => {
-    const {item} = props;
-
-    return (
-        <>
-            <li>{item}</li>
-            <button>Add to cart</button>
-        </>
+            </section>
     )
 }
 
