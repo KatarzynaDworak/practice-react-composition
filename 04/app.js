@@ -6,14 +6,19 @@ import List from './List';
 
 class App extends React.Component {
     state = {
-        filesList: [],
+        filesList: [{name: 'plik.html', size: 999, content: '', id: 10}],
+    }
+
+    addFile = (file) => {
+        this.setState((prevState) => ({
+            filesList: [...prevState.filesList, file]}))
     }
 
     render() {
         return (
             <section>
-                <File />
-                <List />
+                <File addFile={this.addFile}/>
+                <List items={this.state.filesList}/>
             </section>
         )
     }
