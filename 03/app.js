@@ -23,7 +23,7 @@ class App extends React.Component {
         return (
             <section>
                 <Category items={data} addProductToCart={this.addProductToCart}/>
-                <Cart />
+                <Cart items={data} addProductToCart={this.addProductToCart}/>
             </section>
         )
     }

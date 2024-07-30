@@ -1,12 +1,18 @@
 import React from 'react';
+import Product from './Product';
 
 function Cart(props) {
+
+    const { items } = props;
+
     return (
-        <>
-            <h2>Cart</h2>
-            <li>{props.name} {props.price}</li>
-            <button>Delete</button>
-        </>
+            <section>
+                <h2>Cart</h2>
+                <ul>
+                    {items.map(item => <Product key={item.id} data={item} />)}
+                </ul>
+
+            </section>
     )
 }
 
