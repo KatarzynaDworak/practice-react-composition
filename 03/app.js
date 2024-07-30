@@ -11,19 +11,26 @@ class App extends React.Component {
         cart: [],
     }
     
-    addProductToCart = (product) => {
-        this.setState((prevState) => (
-            {
-               cart: [...prevState.cart, product]
-            }
-        ))
+    addProduct = (id) => {
+        const product = data.find(item => item.id === id)
+
+        if (product) {
+            this.setState((prevState) => (
+                {
+                   cart: [...prevState.cart, product]
+                }
+            ))
+
+        }
     }
 
     render() {
+        const { cart } = this.state;
+
         return (
             <section>
-                <Category items={data} addProductToCart={this.addProductToCart}/>
-                <Cart items={data} addProductToCart={this.addProductToCart}/>
+                <Category items={data} clickHandler={this.addProduct}/>
+                <Cart cart={cart}/>
             </section>
         )
     }
